@@ -1,0 +1,38 @@
+import React, { Component } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+import { MuiThemeProvider } from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import { Home, ItemDetailScreen, CartScreen } from "./pages";
+import { NavBar } from './components'
+import { theme } from "./styles";
+import "./App.css";
+import "./index.css";
+
+export class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  render() {
+    return (
+      <MuiThemeProvider theme={theme({ paletteType: "dark" })}>
+        <CssBaseline />
+        <Router>
+          <NavBar />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/item-detail/:id" component={ItemDetailScreen} />
+            <Route exact path="/cart" component={CartScreen} />
+            <Redirect to="/" />
+          </Switch>
+        </Router>
+      </MuiThemeProvider>
+    );
+  }
+}
