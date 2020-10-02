@@ -32,7 +32,7 @@ const NavBarRaw = (props) => {
       <Grid item xs={6} sm={2}>
         <DropdownMenu title={"Soporte"} />
       </Grid>
-      <NavLink to='/cart' className={styles.mainContainer}>
+      <NavLink to='/cart'>
         <CartIcon />
       </NavLink>
     </Grid>

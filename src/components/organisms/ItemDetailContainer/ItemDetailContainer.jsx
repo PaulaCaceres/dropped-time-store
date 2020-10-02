@@ -27,7 +27,7 @@ const ItemDetailContainerRaw = (props) => {
   }, []);
 
   useEffect(() => {
-    console.log(`YOU BOUGHT ${amount} PRODUCTS`);
+    console.log(`USER BOUGHT ${amount} PRODUCTS`);
   }, [amount])
 
   return (

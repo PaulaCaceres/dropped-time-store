@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withStyles, Button, Typography } from "@material-ui/core";
-import styles from "./styles";
+import { styles } from "./styles";
 
 class ActionButtonRaw extends Component {
   render() {
@@ -16,9 +16,8 @@ class ActionButtonRaw extends Component {
     return (
       <Button
         variant="contained"
-        size="large"
         color="primary"
-        className={buttonStyle || classes.button}
+        className={`${buttonStyle} ${classes.button}`}
         onClick={() => onClick()}
       >
         {img ? (

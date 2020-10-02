@@ -1,23 +1,25 @@
 export const styles = (theme) => ({
   mainContainer: {
-    margin: '3rem 0',
-  },
-  contentContainer: {
     width: '100%',
-    backgroundColor: 'yellow'
+    height: '100%',
+  },
+  textContainer: {
+    alignSelf: 'center',
+    width: '100%',
+    margin: '1rem'
   },
   heroTitle: {
     fontSize: '4rem',
-    backgroundColor: "red",
   },
   heroDescription: {
     fontSize: '1.2rem',
-    backgroundColor: "pink",
   },
   heroImage: {
-    width: '100%',
+    maxWidth: '100%',
+    height: 'auto',
   },
   heroButton: {
+    padding: '1rem 2rem'
   },
   heroTextButton: {
   },

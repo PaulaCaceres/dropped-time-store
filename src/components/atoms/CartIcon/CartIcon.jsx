@@ -1,14 +1,14 @@
 import React from 'react'
 import { withStyles } from "@material-ui/core";
 import { styles } from "./styles";
-import cart from '../../../assets/icons/cart.svg'
+import ShoppingCart from '@material-ui/icons/ShoppingCart';
 
 const CartIconRaw = (props) => {
   const { classes } = props;
 
   return (
     <div>
-      <img src={cart} alt="cart" className={classes.cartIcon} />
+      <ShoppingCart className={classes.cartIcon} />
     </div>
   )
 }

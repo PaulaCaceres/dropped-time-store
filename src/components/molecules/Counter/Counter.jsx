@@ -8,7 +8,7 @@ class CounterRaw extends Component {
         super();
         this.state = {
             counter: 0,
-            maxValue: 4,
+            maxValue: 0,
             minValue: 0,
         }
     }
@@ -29,7 +29,6 @@ class CounterRaw extends Component {
         let currentCounter = this.state.counter
         if (currentCounter < this.state.maxValue) {
             this.props.changeCount(++currentCounter)
-            console.log("ITEM ADDED")
         }
     }
 
@@ -37,29 +36,32 @@ class CounterRaw extends Component {
         let currentCounter = this.state.counter
         if (currentCounter > this.state.minValue) {
             this.props.changeCount(--currentCounter)
-            console.log("ITEM DELETED")
         }
     }
 
     render() {
-        const { classes } = this.props;
-        const { counter } = this.state;
+        const { classes, text } = this.props;
 
         return (
-            <div className={classes.counterContainer}>
-                <Typography>Contador</Typography>
-                <Paper elevation={3} >
-                    <Typography>{counter}</Typography>
+            <div className={classes.counterMainContainer}>
+                <Paper elevation={3} className={classes.counterContainer}>
+                    <Typography className={classes.counterText}>{text}</Typography>
+                    <div className={classes.buttonsContainer}>
+                        <ActionButton
+                            title="-"
+                            onClick={() => this.deleteItem()}
+                            buttonStyle={classes.counterButton}
+                        />
+                        <ActionButton
+                            title="+"
+                            onClick={() => this.addItem()}
+                            buttonStyle={classes.counterButton}
+                        />
+                    </div>
+
                 </ Paper>
 
-                <ActionButton
-                    title="-"
-                    onClick={() => this.deleteItem()}
-                />
-                <ActionButton
-                    title="+"
-                    onClick={() => this.addItem()}
-                />
+
             </div>
         )
     }

@@ -8,7 +8,7 @@ const ItemDetailRaw = (props) => {
     const { classes, item, setAmount } = props;
 
     return (
-        <Paper>
+        <div className={classes.container}>
             <Typography>
                 {item.name}
             </Typography>
@@ -16,12 +16,16 @@ const ItemDetailRaw = (props) => {
             <Typography>
                 {item.description}
             </Typography>
+            <Typography className={classes.stock}>
+                {item.stock > count ? 'Available stock' : 'Out of stock'}
+            </Typography>
+            <Counter text={`Quantity: ${count}`} currentCount={count} changeCount={setCount} max={item.stock} min="0" />
             <ActionButton
-                title="Comprar"
+                title={`Buy (${count})`}
                 onClick={() => setAmount(count)}
+                buttonStyle={classes.buyButton}
             />
-            <Counter currentCount={count} changeCount={setCount} max={item.stock} min="0" />
-        </Paper>
+        </ div>
     )
 }
 

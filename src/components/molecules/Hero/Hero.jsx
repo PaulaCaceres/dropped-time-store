@@ -14,25 +14,24 @@ const HeroRaw = (props) => {
       justify="space-around"
       className={classes.mainContainer}
     >
-      <Grid item xs={12} sm={6} className={classes.contentContainer}>
-        <Typography className={classes.heroTitle}>WEBSITE TITLE</Typography>
-        <Typography className={classes.heroDescription}>Website description</Typography>
-        <Grid item xs={6} sm={3}>
-          <Typography className={classes.heroButton}>
-            <ActionButton
-              title="Destacados"
-              buttonStyle={classes.heroButton}
-              textStyle={classes.heroTextButton}
-            //onClick={() => onClick()}
-            />
-          </Typography>
-        </Grid>
+
+
+      <Grid item xs={12} sm={3} className={classes.textContainer}>
+        <Typography className={classes.heroTitle}>Dropped Time</Typography>
+        <Typography className={classes.heroDescription}>Style and Swimming Performance</Typography>
+        <ActionButton
+          title="Trends"
+          buttonStyle={classes.heroButton}
+          textStyle={classes.heroTextButton}
+        //onClick={() => onClick()}
+        />
       </Grid>
-      <Grid item xs={12} sm={6}>
+      <Grid item xs={12} sm={8}>
         <img src={HeroImage} className={classes.heroImage} alt='hero-background' />
       </Grid>
       {/* {loading ? <Loader /> : <ItemList />} */}
       <ItemList />
+
     </Grid>
   );
 };

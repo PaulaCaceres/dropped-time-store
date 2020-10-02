@@ -3,6 +3,7 @@ export const styles = (theme) => ({
     display: "flex",
     backgroundColor: "rgba(0, 0, 0, 0.9)",
     height: "50px",
+    alignItems: 'center'
   },
   logoStyle: {
     width: "40px",

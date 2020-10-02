@@ -1,5 +1,7 @@
 export const styles = (theme) => ({
-  mainContainer: {},
+  mainContainer: {
+    margin: '2rem'
+  },
   menuButton: {
     backgroundColor: "transparent",
     "&:hover": {
