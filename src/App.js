@@ -5,6 +5,7 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
+import { CartProvider } from './context/cartContext';
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { Home, ItemDetailScreen, CartScreen } from "./pages";
@@ -26,10 +27,12 @@ export class App extends Component {
         <Router>
           <NavBar />
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/item-detail/:id" component={ItemDetailScreen} />
-            <Route exact path="/cart" component={CartScreen} />
-            <Redirect to="/" />
+            <CartProvider>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/products/:id" component={ItemDetailScreen} />
+              <Route exact path="/cart" component={CartScreen} />
+              <Redirect to="/" />
+            </CartProvider>
           </Switch>
         </Router>
       </MuiThemeProvider>

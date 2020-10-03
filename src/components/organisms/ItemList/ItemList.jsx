@@ -32,7 +32,7 @@ const ItemListRaw = (props) => {
         :
         data.map((item, index) => {
           return (
-            <NavLink to={`/item-detail/${item.id}`} key={index}>
+            <NavLink to={`/products/${item.id}`} key={index}>
               <Item
                 title={item.name}
                 description={item.description}

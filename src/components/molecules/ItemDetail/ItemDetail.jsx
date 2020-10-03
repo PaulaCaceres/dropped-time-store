@@ -1,11 +1,19 @@
-import React, { useState } from 'react'
-import { withStyles, Paper, Typography } from "@material-ui/core";
+import React, { useState, useContext } from 'react'
+import { CartContext } from '../../../context/cartContext';
+import { withStyles, Typography } from "@material-ui/core";
 import { styles } from './styles';
 import { ActionButton, Counter } from '../..';
 
 const ItemDetailRaw = (props) => {
-    const [count, setCount] = useState(0)
     const { classes, item, setAmount } = props;
+    const [count, setCount] = useState(0)
+    const [cart, setCart] = useContext(CartContext);
+
+    const addToCart = () => {
+        const toBuy = { id: item.id, amount: count };
+        setCart(currentCart => [...currentCart, toBuy])
+        console.log("CART", cart);
+    }
 
     return (
         <div className={classes.container}>
@@ -21,8 +29,9 @@ const ItemDetailRaw = (props) => {
             </Typography>
             <Counter text={`Quantity: ${count}`} currentCount={count} changeCount={setCount} max={item.stock} min="0" />
             <ActionButton
-                title={`Buy (${count})`}
-                onClick={() => setAmount(count)}
+                title={`Add to cart (${count})`}
+                /* onClick={() => setAmount(count)} */
+                onClick={addToCart}
                 buttonStyle={classes.buyButton}
             />
         </ div>
