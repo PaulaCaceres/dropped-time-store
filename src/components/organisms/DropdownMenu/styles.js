@@ -1,12 +1,20 @@
 export const styles = (theme) => ({
-  mainContainer: {},
+  mainContainer: {
+  },
   menuButton: {
-    backgroundColor: "transparent",
+    color: '#ffd0b0',
+    fontWeight: '400',
     "&:hover": {
-      color: "#ffd8df",
+      color: "#ff9e80",
       backgroundColor: "transparent",
     },
-    margin: "0.3rem 0",
-    padding: "0.5rem 2rem",
   },
+  link: {
+    textDecoration: 'none',
+    color: 'black',
+    '&:hover': {
+      textDecoration: 'underline',
+      color: 'grey',
+    }
+  }
 });

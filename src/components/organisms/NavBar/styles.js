@@ -1,9 +1,9 @@
 export const styles = (theme) => ({
   mainContainer: {
-    display: "flex",
     backgroundColor: "rgba(0, 0, 0, 0.9)",
     height: "50px",
-    alignItems: 'center'
+    alignItems: 'center',
+    display: 'flex'
   },
   logoStyle: {
     width: "40px",
@@ -15,5 +15,14 @@ export const styles = (theme) => ({
   logoTitle: {
     color: "white",
     backgroundColor: "white",
+  },
+  navbarItem: {
+    textTransform: 'uppercase',
+    textDecoration: 'none',
+    color: '#ffd0b0',
+    "&:hover": {
+      color: "#ff9e80",
+    },
+    margin: '0 4rem'
   },
 });

@@ -29,8 +29,6 @@ const HeroRaw = (props) => {
       <Grid item xs={12} sm={8}>
         <img src={HeroImage} className={classes.heroImage} alt='hero-background' />
       </Grid>
-      {/* {loading ? <Loader /> : <ItemList />} */}
-      <ItemList />
 
     </Grid>
   );

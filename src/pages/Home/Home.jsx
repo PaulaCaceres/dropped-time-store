@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withStyles } from "@material-ui/core";
 import { styles } from "./styles";
-import { NavBar, Hero } from "../../components";
+import { Hero } from "../../components";
 
 class HomeRaw extends Component {
   render() {

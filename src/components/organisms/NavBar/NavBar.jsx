@@ -12,29 +12,36 @@ const NavBarRaw = (props) => {
     <Grid
       container
       direction="row"
-      justify="space-around"
       className={classes.mainContainer}
     >
-      <Grid item xs={6} sm={3}>
-        <NavLink to='/' className={styles.mainContainer}>
+      <Grid item xs={6} sm={2}>
+        <NavLink to='/' className={classes.logoContainer}>
           <img src={Logo} alt="Logo" className={classes.logoStyle} />
         </NavLink>
-      </Grid>
+      </ Grid>
+
       <Grid item xs={6} sm={2}>
-        <DropdownMenu title={"Productos"} />
-      </Grid>
+        <DropdownMenu title={"Products"} />
+      </ Grid>
+
       <Grid item xs={6} sm={2}>
-        <DropdownMenu title={"Acerca"} />
-      </Grid>
+        <NavLink to='/about' className={classes.navbarItem}>
+          About
+        </NavLink>
+      </ Grid>
+
       <Grid item xs={6} sm={2}>
-        <DropdownMenu title={"Contacto"} />
+        <NavLink to='/contact' className={classes.navbarItem}>
+          Contact
+        </NavLink>
+      </ Grid>
+
+      <Grid item xs={6} sm={4} className={classes.navbarCart}>
+        <NavLink to='/cart'>
+          <CartIcon />
+        </NavLink>
       </Grid>
-      <Grid item xs={6} sm={2}>
-        <DropdownMenu title={"Soporte"} />
-      </Grid>
-      <NavLink to='/cart'>
-        <CartIcon />
-      </NavLink>
+
     </Grid>
   );
 };

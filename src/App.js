@@ -8,7 +8,7 @@ import {
 import { CartProvider } from './context/cartContext';
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import { Home, ItemDetailScreen, CartScreen } from "./pages";
+import { Home, ItemDetailScreen, CartScreen, ProductsScreen } from "./pages";
 import { NavBar } from './components'
 import { theme } from "./styles";
 import "./App.css";
@@ -29,9 +29,9 @@ export class App extends Component {
           <Switch>
             <CartProvider>
               <Route exact path="/" component={Home} />
+              <Route exact path="/products" component={ProductsScreen} />
               <Route exact path="/products/:id" component={ItemDetailScreen} />
               <Route exact path="/cart" component={CartScreen} />
-              <Redirect to="/" />
             </CartProvider>
           </Switch>
         </Router>
