@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../../../context/cartContext';
+import { useHistory } from "react-router-dom";
 import { withStyles, Typography, Paper } from "@material-ui/core";
 import { ActionButton } from '../../atoms'
 import { styles } from "./styles";
@@ -7,8 +8,13 @@ import Shopping from "../../../assets/icons/shopping.png";
 
 const CartRaw = (props) => {
   const { classes } = props;
+  const history = useHistory();
   const { calculateProductsAmount } = useContext(CartContext);
   const productsAmount = calculateProductsAmount()
+
+  const goToCheckout = () => {
+    history.push('/checkout')
+  }
 
   return (
     <Paper className={classes.mainContainer}>
@@ -24,7 +30,7 @@ const CartRaw = (props) => {
       <div className={classes.buttonContainer}>
         <ActionButton
           title={`Proceed to checkout`}
-          /* onClick={() => setAmount(count)} */
+          onClick={goToCheckout}
           buttonStyle={classes.checkoutButton}
         />
       </div>
