@@ -1,18 +1,19 @@
 import React, { Component } from "react";
-import { withStyles, Typography } from "@material-ui/core";
+import { withStyles } from "@material-ui/core";
 import styles from "./styles";
-import loader from '../../../assets/icons/clock.svg'
+import ClipLoader from "react-spinners/ClipLoader";
 
 class LoaderRaw extends Component {
   render() {
     const { classes } = this.props;
 
     return (
-      <div>
-        <Typography className={classes.loadingText}>
-          Loading...
-        </Typography>
-        <img src={loader} alt="loader" className={classes.loadingIcon} />
+      <div className={classes.loader}>
+        <ClipLoader
+          size={150}
+          color={"pink"}
+          loading={this.state.loading}
+        />
       </div>
     );
   }

@@ -7,14 +7,8 @@ import Shopping from "../../../assets/icons/shopping.png";
 
 const CartRaw = (props) => {
   const { classes } = props;
-  const [cart, setCart] = useContext(CartContext);
-
-  let totalProducts = 0;
-  let currentProducts = 0;
-  cart.map(product => {
-    currentProducts += product.amount;
-  })
-  totalProducts = currentProducts;
+  const { calculateProductsAmount } = useContext(CartContext);
+  const productsAmount = calculateProductsAmount()
 
   return (
     <Paper className={classes.mainContainer}>
@@ -24,7 +18,7 @@ const CartRaw = (props) => {
         </div>
         <Typography className={classes.text}>Subtotal: </Typography>
         <Typography className={classes.text}>Shipping: FREE</Typography>
-        <Typography className={classes.text}>Items: {totalProducts}</Typography>
+        <Typography className={classes.text}>Items: {productsAmount}</Typography>
         <Typography className={classes.text}>Order total: </Typography>
       </div>
       <div className={classes.buttonContainer}>

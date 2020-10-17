@@ -6,6 +6,7 @@ import { ItemDetailContainer } from "../../components";
 
 const ItemDetailScreenRaw = () => {
   const { id } = useParams();
+  console.log('id', id);
   return (
     <div className={styles.mainContainer}>
       <ItemDetailContainer productId={id} />

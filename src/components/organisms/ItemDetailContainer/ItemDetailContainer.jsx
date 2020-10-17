@@ -2,33 +2,30 @@ import React, { useState, useEffect } from "react";
 import { withStyles } from "@material-ui/core";
 import { ItemDetail, Loader } from '../../'
 import { styles } from "./styles";
-import products from '../../../utils/products'
+import { getFirestore } from '../../../firebase';
 
 const ItemDetailContainerRaw = (props) => {
   const [loading, setLoading] = useState(false);
   const [product, setProduct] = useState({});
   const [amount, setAmount] = useState(0);
-  const { classes } = props
-  const productsList = products
-
-  const promise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(productsList)
-    }, 1000)
-  });
+  const { classes, productId } = props
 
   useEffect(() => {
-    setLoading(true);
-    promise.then(result => {
-      const selectedProduct = result.find(product => product.id == props.productId)
-      setProduct(selectedProduct);
-      setLoading(false);
-    });
-  }, []);
-
-  useEffect(() => {
-    console.log(`USER BOUGHT ${amount} PRODUCTS`);
-  }, [amount])
+    const db = getFirestore();
+    const itemCollection = db.collection('items');
+    const item = itemCollection.doc(productId)
+    item.get()
+      .then((doc) => {
+        if (!doc) {
+          console.log('No item!');
+          return;
+        }
+        setProduct({ id: doc.id, ...doc.data() });
+      })
+      .catch((error) => {
+        console.log("There was an error trying to get items: ", error);
+      })
+  }, [productId]);
 
   return (
     <div className={classes.mainContainer}>

@@ -1,28 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { styles } from "./styles";
 import { withStyles } from "@material-ui/core";
 import { NavLink } from "react-router-dom";
 import { Item, Loader } from '../..'
-import products from '../../../utils/products'
+import item from '../../../assets/icons/book.svg'
 
 const ItemListRaw = (props) => {
-  const [loading, setLoading] = useState(false)
-  const [data, setData] = useState([]);
-  const productsList = products;
-
-  const promise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(productsList)
-    }, 1000)
-  });
-
-  useEffect(() => {
-    setLoading(true);
-    promise.then(result => {
-      setData(result);
-      setLoading(false);
-    });
-  }, []);
+  const { classes, data, loading } = props
 
   return (
     <div>
@@ -32,11 +16,11 @@ const ItemListRaw = (props) => {
         :
         data.map((item, index) => {
           return (
-            <NavLink to={`/products/${item.id}`} key={index}>
+            <NavLink to={`/products/${item.id}`} key={index} className={classes.itemListContainer}>
               <Item
-                title={item.name}
+                title={item.title}
                 description={item.description}
-                onClick={() => console.log("ITEM", item.id)}
+                img={item}
               />
             </NavLink>
           )

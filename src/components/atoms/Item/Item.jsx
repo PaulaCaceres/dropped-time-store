@@ -1,7 +1,6 @@
 import React from 'react';
 import { withStyles, Button, Card, Typography, CardActionArea, CardActions, CardContent, CardMedia } from "@material-ui/core";
 import { styles } from "./styles";
-import item from '../../../assets/icons/book.svg'
 
 const ItemRaw = (props) => {
 
@@ -14,10 +13,10 @@ const ItemRaw = (props) => {
   } = props;
 
   return (
-    <Card className={classes.root}>
-      <CardActionArea>
+    <Card className={classes.mainContainer}>
+      <CardActionArea className={classes.actionContainer}>
         <CardMedia
-          className={classes.media}
+          className={classes.itemImage}
           image={img}
           title="Swimming products"
         />
@@ -29,11 +28,9 @@ const ItemRaw = (props) => {
             {description}
           </Typography>
         </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button size="small">Add to cart</Button>
         <Button size="small">More details</Button>
-      </CardActions>
+
+      </CardActionArea>
     </Card>
   );
 };

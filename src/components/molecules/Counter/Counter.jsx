@@ -23,18 +23,27 @@ class CounterRaw extends Component {
                 counter: this.props.currentCount
             })
         }
+        if (prevProps.max !== this.props.max) {
+            this.setState({
+                maxValue: this.props.max
+            })
+        }
     }
 
     addItem = () => {
         let currentCounter = this.state.counter
+        console.log('currentCounter', currentCounter);
         if (currentCounter < this.state.maxValue) {
+            console.log('add');
             this.props.changeCount(++currentCounter)
         }
     }
 
     deleteItem = () => {
         let currentCounter = this.state.counter
+        console.log('currentCounter', currentCounter);
         if (currentCounter > this.state.minValue) {
+            console.log('delete');
             this.props.changeCount(--currentCounter)
         }
     }

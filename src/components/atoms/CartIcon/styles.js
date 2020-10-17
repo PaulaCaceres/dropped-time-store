@@ -1,6 +1,6 @@
 export const styles = (theme) => ({
   cartIcon: {
-    width: '4rem',
+    width: '2.5rem',
     color: "#ffd8df",
   }
 });

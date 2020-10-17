@@ -3,12 +3,11 @@ import { createStyles } from "@material-ui/core/styles";
 export const styles = (theme) => {
   return createStyles({
     mainContainer: {
-      margin: '2rem'
+      margin: '2rem',
     },
     title: {
       fontSize: '3rem',
       fontWeight: '700'
-
     },
     icon: {
     },
@@ -25,8 +24,12 @@ export const styles = (theme) => {
       '&:hover': {
         textDecoration: 'underline',
         color: 'grey',
-
       }
-    }
+    },
+    itemListContainer: {
+      display: 'flex',
+      flexDirection: 'row',
+      width: 'fit-content'
+    },
   });
 };

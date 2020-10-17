@@ -1,32 +1,52 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
+import { getFirestore } from '../../firebase';
 import { NavLink } from "react-router-dom";
 import { withStyles, Typography, Breadcrumbs } from "@material-ui/core";
 import { styles } from "./styles";
 import { ItemList } from "../../components";
 
-class ProductsScreenRaw extends Component {
+const ProductsScreenRaw = (props) => {
+  const [items, setItems] = useState([]);
+  const { classes } = props;
 
-  render() {
-    const { classes } = this.props;
+  useEffect(() => {
+    const db = getFirestore();
+    const itemCollection = db.collection("items")
+    itemCollection.get()
+      .then((querySnapshot) => {
+        if (querySnapshot.size === 0) {
+          console.log('No data!');
+        }
+        const queryItems = querySnapshot.docs.map(doc => {
+          return ({ id: doc.id, ...doc.data() });
+        })
+        setItems(queryItems);
+      })
+      .catch((error) => {
+        console.log("There was an error trying to get items: ", error);
+      })
 
-    return (
-      <div className={classes.mainContainer}>
-        <Typography className={classes.title}>Find the one it suits you best</Typography>
+  }, []);
 
-        <Breadcrumbs className={classes.breadcrumbs}>
-          <NavLink to='/' className={classes.link}>
-            Home
+  console.log('items', items);
+
+  return (
+    <div className={classes.mainContainer}>
+      <Typography className={classes.title}>Find the one it suits you best</Typography>
+
+      <Breadcrumbs className={classes.breadcrumbs}>
+        <NavLink to='/' className={classes.link}>
+          Home
           </NavLink>
-          <Typography className={classes.selectedBreadcrumb}>Products</Typography>
-        </Breadcrumbs>
+        <Typography className={classes.selectedBreadcrumb}>Products</Typography>
+      </Breadcrumbs>
 
-        <div>
-          <ItemList />
-        </div>
-
+      <div className={classes.itemListContainer}>
+        <ItemList data={items} />
       </div>
-    );
-  }
+
+    </div>
+  );
 }
 
 export const ProductsScreen = withStyles(styles)(ProductsScreenRaw);

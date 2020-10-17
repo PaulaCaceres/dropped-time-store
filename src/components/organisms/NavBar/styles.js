@@ -3,7 +3,8 @@ export const styles = (theme) => ({
     backgroundColor: "rgba(0, 0, 0, 0.9)",
     height: "50px",
     alignItems: 'center',
-    display: 'flex'
+    display: 'flex',
+    justifyContent: "space-around"
   },
   logoStyle: {
     width: "40px",
@@ -17,12 +18,22 @@ export const styles = (theme) => ({
     backgroundColor: "white",
   },
   navbarItem: {
+    display: 'flex',
+    flexDirection: 'row',
     textTransform: 'uppercase',
     textDecoration: 'none',
+    alignItems: 'center',
     color: '#ffd0b0',
     "&:hover": {
       color: "#ff9e80",
     },
-    margin: '0 4rem'
   },
+  cartIcon: {
+    width: '1rem'
+  },
+  cartAmount: {
+    fontSize: '1rem',
+    margin: 0,
+    padding: 0
+  }
 });

@@ -1,48 +1,39 @@
-import React from "react";
+import React, { useContext } from 'react'
+import { CartContext } from '../../../context/cartContext';
 import { NavLink } from "react-router-dom";
-import { withStyles, Grid, Typography } from "@material-ui/core";
+import { withStyles, Typography } from "@material-ui/core";
 import { DropdownMenu, CartIcon } from "../../";
 import { styles } from "./styles";
 import Logo from "../../../assets/icons/logo.svg";
 
 const NavBarRaw = (props) => {
   const { classes } = props;
+  const { calculateProductsAmount } = useContext(CartContext);
+  const productsAmount = calculateProductsAmount()
 
   return (
-    <Grid
-      container
-      direction="row"
+    <div
       className={classes.mainContainer}
     >
-      <Grid item xs={6} sm={2}>
-        <NavLink to='/' className={classes.logoContainer}>
-          <img src={Logo} alt="Logo" className={classes.logoStyle} />
+      <NavLink to='/' className={classes.logoContainer}>
+        <img src={Logo} alt="Logo" className={classes.logoStyle} />
+      </NavLink>
+
+      <DropdownMenu title={"Products"} />
+
+      <NavLink to='/about' className={classes.navbarItem}>
+        About
         </NavLink>
-      </ Grid>
 
-      <Grid item xs={6} sm={2}>
-        <DropdownMenu title={"Products"} />
-      </ Grid>
-
-      <Grid item xs={6} sm={2}>
-        <NavLink to='/about' className={classes.navbarItem}>
-          About
+      <NavLink to='/contact' className={classes.navbarItem}>
+        Contact
         </NavLink>
-      </ Grid>
 
-      <Grid item xs={6} sm={2}>
-        <NavLink to='/contact' className={classes.navbarItem}>
-          Contact
-        </NavLink>
-      </ Grid>
-
-      <Grid item xs={6} sm={4} className={classes.navbarCart}>
-        <NavLink to='/cart'>
-          <CartIcon />
-        </NavLink>
-      </Grid>
-
-    </Grid>
+      <NavLink to='/cart' className={classes.navbarItem} >
+        <CartIcon className={classes.cartIcon} />
+        <Typography className={classes.cartAmount}>{productsAmount}</Typography>
+      </NavLink>
+    </div>
   );
 };
 

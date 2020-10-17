@@ -1,6 +1,6 @@
 export const styles = (theme) => ({
   mainContainer: {
-    margin: '2rem'
+    margin: '2rem',
   },
   menuButton: {
     backgroundColor: "transparent",
