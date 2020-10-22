@@ -67,10 +67,7 @@ class CounterRaw extends Component {
                             buttonStyle={classes.counterButton}
                         />
                     </div>
-
                 </ Paper>
-
-
             </div>
         )
     }

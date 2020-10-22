@@ -4,7 +4,8 @@ export const CartContext = React.createContext([]);
 
 export const CartProvider = (props) => {
   const [cart, setCart] = useState([]);
-  const [amount, setAmount] = useState(0)
+  const [amount, setAmount] = useState(0);
+  const [price, setPrice] = useState(0);
 
   const calculateProductsAmount = () => {
     let currentProducts = 0;
@@ -15,8 +16,20 @@ export const CartProvider = (props) => {
     return totalAmount
   }
 
+  const calculateOrderPrice = () => {
+    let currentProducts = 0;
+    cart.map(product => {
+      currentProducts += product.price;
+      console.log("product.price ----", product.price);
+    })
+    const totalOrderPrice = currentProducts;
+    console.log("totalOrderPrice ----", totalOrderPrice);
+
+    return totalOrderPrice
+  }
+
   return (
-    <CartContext.Provider value={{ cart, setCart, amount, setAmount, calculateProductsAmount }}>
+    <CartContext.Provider value={{ cart, setCart, amount, setAmount, price, setPrice, calculateProductsAmount, calculateOrderPrice }}>
       {props.children}
     </CartContext.Provider>
   )

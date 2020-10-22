@@ -1,14 +1,25 @@
 import React from "react";
-import { useParams } from 'react-router-dom'
-import { withStyles } from "@material-ui/core";
+import { useParams, NavLink } from 'react-router-dom'
+import { withStyles, Breadcrumbs, Typography } from "@material-ui/core";
 import { styles } from "./styles";
 import { ItemDetailContainer } from "../../components";
 
-const ItemDetailScreenRaw = () => {
+const ItemDetailScreenRaw = (props) => {
+  const { classes } = props;
   const { id } = useParams();
-  console.log('id', id);
+
   return (
-    <div className={styles.mainContainer}>
+    <div className={classes.mainContainer}>
+      <Breadcrumbs className={classes.breadcrumbs}>
+        <NavLink to='/' className={classes.link}>
+          Home
+          </NavLink>
+        <NavLink to='/products' className={classes.link}>
+          Products
+          </NavLink>
+        <Typography className={classes.selectedBreadcrumb}>Product detail</Typography>
+      </Breadcrumbs>
+
       <ItemDetailContainer productId={id} />
     </div>
   )

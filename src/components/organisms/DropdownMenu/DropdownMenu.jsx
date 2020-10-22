@@ -6,6 +6,8 @@ import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import { styles } from "./styles";
 
 const DropdownMenuRaw = (props) => {
+  const { title, classes, dropdownStyle } = props;
+
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event) => {
@@ -17,8 +19,6 @@ const DropdownMenuRaw = (props) => {
     setAnchorEl(null);
   };
 
-  const { title, classes } = props;
-
   return (
     <div className={classes.mainContainer}>
       <Button
@@ -26,7 +26,7 @@ const DropdownMenuRaw = (props) => {
         aria-haspopup="true"
         color="primary"
         onClick={handleClick}
-        className={classes.menuButton}
+        className={`${classes.menuButton} ${dropdownStyle}`}
       >
         {title}
       </Button>

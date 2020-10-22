@@ -4,7 +4,8 @@ import { NavLink } from "react-router-dom";
 import { withStyles, Typography } from "@material-ui/core";
 import { DropdownMenu, CartIcon } from "../../";
 import { styles } from "./styles";
-import Logo from "../../../assets/icons/logo.svg";
+import Logo from "../../../assets/icons/logo-dropped.svg";
+
 
 const NavBarRaw = (props) => {
   const { classes } = props;
@@ -19,7 +20,7 @@ const NavBarRaw = (props) => {
         <img src={Logo} alt="Logo" className={classes.logoStyle} />
       </NavLink>
 
-      <DropdownMenu title={"Products"} />
+      <DropdownMenu title={"Products"} dropdownStyle={classes.navbarItem} />
 
       <NavLink to='/about' className={classes.navbarItem}>
         About

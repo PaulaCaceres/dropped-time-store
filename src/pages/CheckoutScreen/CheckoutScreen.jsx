@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { getFirestore } from '../../firebase';
 import { NavLink } from "react-router-dom";
-import { withStyles, Typography, Breadcrumbs } from "@material-ui/core";
-import { ActionButton } from '../../components'
+import { withStyles, Typography, Breadcrumbs, Paper } from "@material-ui/core";
+import { ActionButton, Cart } from '../../components'
 import { styles } from "./styles";
 
 const CheckoutScreenRaw = (props) => {
@@ -21,6 +21,23 @@ const CheckoutScreenRaw = (props) => {
           </NavLink>
         <Typography className={classes.selectedBreadcrumb}>Checkout</Typography>
       </Breadcrumbs>
+
+      <Paper className={classes.mainContainer}>
+        <Typography className={classes.text}>Shipping details</Typography>
+
+      </Paper>
+
+      <Paper className={classes.mainContainer}>
+        <Typography className={classes.text}>Payment details </Typography>
+
+      </Paper>
+
+      <Paper className={classes.mainContainer}>
+        <Typography className={classes.text}>Your order </Typography>
+
+      </Paper>
+
+      <Cart />
 
       <ActionButton title='Confirm order' />
     </div>

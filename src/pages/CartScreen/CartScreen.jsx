@@ -31,7 +31,7 @@ class CartScreenRaw extends Component {
           </NavLink>
           <Typography className={classes.selectedBreadcrumb}>Cart</Typography>
         </Breadcrumbs>
-        <Cart />
+        <Cart button />
         {isEmpty ?
           <div>
             <Typography>

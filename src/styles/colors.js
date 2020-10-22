@@ -27,9 +27,9 @@ export const colors = {
     main: "#4f83cc",
   },
   text: {
-    primary: "rgba(0, 0, 0, 0.87)",
-    secondary: "rgba(0, 0, 0, 0.54)",
-    disabled: "rgba(0, 0, 0, 0.38)",
+    primary: "#000000",
+    secondary: "#FFFFFF",
+    disabled: "#FAFAFA",
   },
   action: {
     active: "#ff9e80",

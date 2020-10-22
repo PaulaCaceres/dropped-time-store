@@ -3,7 +3,6 @@ import { styles } from "./styles";
 import { withStyles } from "@material-ui/core";
 import { NavLink } from "react-router-dom";
 import { Item, Loader } from '../..'
-import item from '../../../assets/icons/book.svg'
 
 const ItemListRaw = (props) => {
   const { classes, data, loading } = props

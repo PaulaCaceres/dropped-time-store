@@ -1,17 +1,16 @@
+import { colors } from '../../../styles/colors';
+
 export const styles = (theme) => ({
   mainContainer: {
-    backgroundColor: "rgba(0, 0, 0, 0.9)",
+    backgroundColor: colors.background.secondary,
     height: "50px",
     alignItems: 'center',
     display: 'flex',
     justifyContent: "space-around"
   },
   logoStyle: {
-    width: "40px",
-    height: "40px",
-    backgroundColor: "white",
+    width: "130px",
     padding: "0.2rem",
-    borderRadius: 30,
   },
   logoTitle: {
     color: "white",
@@ -23,17 +22,18 @@ export const styles = (theme) => ({
     textTransform: 'uppercase',
     textDecoration: 'none',
     alignItems: 'center',
-    color: '#ffd0b0',
+    color: colors.secondary.main,
     "&:hover": {
-      color: "#ff9e80",
+      color: colors.secondary.dark,
     },
   },
   cartIcon: {
-    width: '1rem'
+    width: '1rem',
   },
   cartAmount: {
-    fontSize: '1rem',
+    fontSize: '1.2rem',
+    color: colors.text.secondary,
     margin: 0,
-    padding: 0
+    padding: 0,
   }
 });

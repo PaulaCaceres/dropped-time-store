@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom";
 import { styles } from "./styles";
 import { withStyles, Typography, Grid } from "@material-ui/core";
 import { ActionButton } from '../..'
-import HeroImage from '../../../assets/images/test.jpg'
 
 const HeroRaw = (props) => {
   const { classes } = props;
@@ -19,8 +18,8 @@ const HeroRaw = (props) => {
       justify="space-around"
       className={classes.mainContainer}
     >
-      <Grid item xs={12} sm={3} className={classes.textContainer}>
-        <Typography className={classes.heroTitle}>Dropped Time</Typography>
+      <Grid item xs={12} sm={4} className={classes.textContainer}>
+        <Typography className={classes.heroTitle}>Time to give your best</Typography>
         <Typography className={classes.heroDescription}>Style and Swimming Performance</Typography>
         <ActionButton
           title="Trends"
@@ -29,10 +28,7 @@ const HeroRaw = (props) => {
           onClick={goToProducts}
         />
       </Grid>
-      <Grid item xs={12} sm={8}>
-        <img src={HeroImage} className={classes.heroImage} alt='hero-background' />
-      </Grid>
-
+      <Grid item xs={12} sm={3} className={classes.textContainer} />
     </Grid>
   );
 };
