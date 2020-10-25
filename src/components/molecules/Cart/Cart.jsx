@@ -28,7 +28,7 @@ const CartRaw = (props) => {
         <Typography className={classes.text}>Subtotal: </Typography>
         <Typography className={classes.text}>Total items: {productsAmount}</Typography>
         <Typography className={classes.text}>Shipping: FREE</Typography>
-        <Typography className={classes.text}>Order total: {orderPrice}</Typography>
+        {/*  <Typography className={classes.text}>Order total: {orderPrice}</Typography> */}
 
       </div>
       {button &&

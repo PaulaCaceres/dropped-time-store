@@ -11,7 +11,6 @@ const DropdownMenuRaw = (props) => {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event) => {
-    console.log("event", event);
     setAnchorEl(event.currentTarget);
   };
 

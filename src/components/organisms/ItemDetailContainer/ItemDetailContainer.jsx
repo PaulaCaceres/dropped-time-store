@@ -16,10 +16,6 @@ const ItemDetailContainerRaw = (props) => {
     const item = itemCollection.doc(productId)
     item.get()
       .then((doc) => {
-        if (!doc) {
-          console.log('No item!');
-          return;
-        }
         setProduct({ id: doc.id, ...doc.data() });
       })
       .catch((error) => {

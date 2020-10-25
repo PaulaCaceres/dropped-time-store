@@ -12,9 +12,6 @@ const HomeRaw = () => {
     const itemCollection = db.collection("items")
     itemCollection.get()
       .then((querySnapshot) => {
-        if (querySnapshot.size === 0) {
-          console.log('No data!');
-        }
         const queryItems = querySnapshot.docs.map(doc => doc.data())
         setItems(queryItems);
       })

@@ -23,7 +23,6 @@ const CheckoutScreenRaw = (props) => {
     const id = event.target.id
     const value = event.target.value
     setOrder({ ...order, [id]: value })
-    console.log("order", order);
   }
 
   const goToConfirmedOrder = () => {

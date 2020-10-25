@@ -20,11 +20,8 @@ export const CartProvider = (props) => {
     let currentProducts = 0;
     cart.map(product => {
       currentProducts += product.price;
-      console.log("product.price ----", product.price);
     })
     const totalOrderPrice = currentProducts;
-    console.log("totalOrderPrice ----", totalOrderPrice);
-
     return totalOrderPrice
   }
 

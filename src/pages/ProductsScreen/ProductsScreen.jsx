@@ -14,9 +14,6 @@ const ProductsScreenRaw = (props) => {
     const itemCollection = db.collection("items")
     itemCollection.get()
       .then((querySnapshot) => {
-        if (querySnapshot.size === 0) {
-          console.log('No data!');
-        }
         const queryItems = querySnapshot.docs.map(doc => {
           return ({ id: doc.id, ...doc.data() });
         })
@@ -27,8 +24,6 @@ const ProductsScreenRaw = (props) => {
       })
 
   }, []);
-
-  console.log('items', items);
 
   return (
     <div className={classes.mainContainer}>
