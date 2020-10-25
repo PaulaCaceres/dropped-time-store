@@ -1,6 +1,9 @@
 export const styles = (theme) => ({
+  mainContainer: {
+    display: 'flex',
+    flexWrap: 'wrap'
+  },
   itemListContainer: {
-    backgroundColor: "red",
     width: 'fit-content',
     textDecoration: 'none',
   },

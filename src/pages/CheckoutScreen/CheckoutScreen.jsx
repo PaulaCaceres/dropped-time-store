@@ -1,16 +1,38 @@
-import React, { useState, useEffect } from "react";
-import { getFirestore } from '../../firebase';
-import { NavLink } from "react-router-dom";
+import React, { useState } from "react";
+import { NavLink, useHistory } from "react-router-dom";
+import { CartContext } from '../../context/cartContext'
 import { withStyles, Typography, Breadcrumbs, Paper } from "@material-ui/core";
-import { ActionButton, Cart } from '../../components'
+import { ActionButton, Form } from '../../components'
 import { styles } from "./styles";
 
 const CheckoutScreenRaw = (props) => {
   const { classes } = props;
+  const history = useHistory();
+  const [order, setOrder] = useState({
+    fullName: '',
+    email: '',
+    country: '',
+    address: '',
+    postcode: '',
+    cardNumber: '',
+    expirationDate: '',
+    CVC: ''
+  });
+
+  const fillOrderDetails = (event) => {
+    const id = event.target.id
+    const value = event.target.value
+    setOrder({ ...order, [id]: value })
+    console.log("order", order);
+  }
+
+  const goToConfirmedOrder = () => {
+    history.push('/confirmed-order')
+  }
 
   return (
     <div className={classes.mainContainer}>
-      <Typography className={classes.title}>Order Checkout</Typography>
+      <Typography className={classes.mainTitle}>Order Checkout</Typography>
 
       <Breadcrumbs className={classes.breadcrumbs}>
         <NavLink to='/' className={classes.link}>
@@ -22,26 +44,36 @@ const CheckoutScreenRaw = (props) => {
         <Typography className={classes.selectedBreadcrumb}>Checkout</Typography>
       </Breadcrumbs>
 
-      <Paper className={classes.mainContainer}>
-        <Typography className={classes.text}>Shipping details</Typography>
+      <div className={classes.detailsContainer}>
+        <Paper className={classes.shippingContainer}>
+          <Typography className={classes.title}>Shipping details</Typography>
+          <Form title='Full name' id='fullName' value={order.fullName} onChange={fillOrderDetails} />
+          <Form title='Email address' id='email' value={order.email} onChange={fillOrderDetails} />
+          <Form title='Country or region' id='country' value={order.country} onChange={fillOrderDetails} />
+          <Form title='Address' id='address' value={order.address} onChange={fillOrderDetails} />
+          <Form title='Postcode' id='postcode' value={order.postcode} onChange={fillOrderDetails} />
+        </Paper>
 
+        <Paper className={classes.paymentContainer}>
+          <Typography className={classes.title}>Payment details </Typography>
+          <Form title='Card number' id='cardNumber' value={order.cardNumber} onChange={fillOrderDetails} />
+          <Form title='Expiration date' id='expirationDate' value={order.expirationDate} onChange={fillOrderDetails} />
+          <Form title='CVC code' id='CVC' value={order.CVC} onChange={fillOrderDetails} />
+        </Paper>
+      </div>
+
+
+      <Paper className={classes.orderContainer}>
+        <Typography className={classes.title}>Order resume </Typography>
+        {Object.values(order).map(item =>
+          <Typography>{item}</Typography>
+        )}
+        <ActionButton title='Confirm order' onClick={goToConfirmedOrder} />
       </Paper>
-
-      <Paper className={classes.mainContainer}>
-        <Typography className={classes.text}>Payment details </Typography>
-
-      </Paper>
-
-      <Paper className={classes.mainContainer}>
-        <Typography className={classes.text}>Your order </Typography>
-
-      </Paper>
-
-      <Cart />
-
-      <ActionButton title='Confirm order' />
     </div>
   );
 }
+
+CheckoutScreenRaw.contextType = CartContext;
 
 export const CheckoutScreen = withStyles(styles)(CheckoutScreenRaw);

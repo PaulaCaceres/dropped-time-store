@@ -8,7 +8,7 @@ const ItemListRaw = (props) => {
   const { classes, data, loading } = props
 
   return (
-    <div>
+    <div className={classes.mainContainer}>
       {loading
         ?
         <Loader />

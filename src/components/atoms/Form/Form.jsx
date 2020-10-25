@@ -6,33 +6,16 @@ class FormRaw extends Component {
   render() {
     const {
       classes,
+      id,
       title,
-      buttonStyle,
-      textStyle,
-      img,
-      onClick = () => { },
+      type,
+      value,
+      onChange = () => { },
     } = this.props;
 
     return (
-      <form className={classes.root} noValidate autoComplete="off">
-        <div>
-          <TextField required id="standard-required" label="Required" defaultValue="Hello World" />
-          <TextField disabled id="standard-disabled" label="Disabled" defaultValue="Hello World" />
-          <TextField
-            id="standard-password-input"
-            label="Password"
-            type="password"
-            autoComplete="current-password"
-          />
-          <TextField
-            id="standard-read-only-input"
-            label="Read Only"
-            defaultValue="Hello World"
-            InputProps={{
-              readOnly: true,
-            }}
-          />
-        </div>
+      <form className={classes.form} noValidate autoComplete="off">
+        <TextField required id={id} label={title} value={value} placeholder={title} onChange={onChange} type={type} />
       </form>
     );
   }

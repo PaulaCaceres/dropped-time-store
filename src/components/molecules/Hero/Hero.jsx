@@ -22,7 +22,7 @@ const HeroRaw = (props) => {
         <Typography className={classes.heroTitle}>Time to give your best</Typography>
         <Typography className={classes.heroDescription}>Style and Swimming Performance</Typography>
         <ActionButton
-          title="Trends"
+          title="Shop now"
           buttonStyle={classes.heroButton}
           textStyle={classes.heroTextButton}
           onClick={goToProducts}

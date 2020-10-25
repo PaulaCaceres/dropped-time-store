@@ -28,7 +28,6 @@ export const styles = (theme) => ({
   },
   itemListContainer: {
     display: 'flex',
-    flexDirection: 'row',
     width: 'fit-content'
   },
 });

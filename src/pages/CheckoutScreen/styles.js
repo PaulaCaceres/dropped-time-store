@@ -4,11 +4,32 @@ export const styles = (theme) => ({
   mainContainer: {
     margin: '2rem',
   },
-  title: {
+  detailsContainer: {
+    margin: '2rem 0',
+    display: 'flex',
+    justifyContent: 'space-around'
+  },
+  shippingContainer: {
+    width: '45%'
+  },
+  paymentContainer: {
+    width: '45%'
+  },
+  orderContainer: {
+    margin: '2rem',
+    minHeight: '10rem',
+    maxWidth: '45%',
+    padding: '0.5rem',
+    flexWrap: 'wrap'
+  },
+  mainTitle: {
     fontSize: '3rem',
     fontWeight: '700'
   },
-  icon: {
+  title: {
+    fontSize: '1.2rem',
+    fontWeight: '500',
+    padding: '0.5rem'
   },
   breadcrumbs: {
     color: 'black',
