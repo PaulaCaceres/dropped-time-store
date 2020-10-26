@@ -11,6 +11,7 @@ const CheckoutScreenRaw = (props) => {
   const [order, setOrder] = useState({
     fullName: '',
     email: '',
+    phone: '',
     country: '',
     address: '',
     postcode: '',
@@ -48,6 +49,7 @@ const CheckoutScreenRaw = (props) => {
           <Typography className={classes.title}>Shipping details</Typography>
           <Form title='Full name' id='fullName' value={order.fullName} onChange={fillOrderDetails} />
           <Form title='Email address' id='email' value={order.email} onChange={fillOrderDetails} />
+          <Form title='Phone' id='phone' value={order.phone} onChange={fillOrderDetails} />
           <Form title='Country or region' id='country' value={order.country} onChange={fillOrderDetails} />
           <Form title='Address' id='address' value={order.address} onChange={fillOrderDetails} />
           <Form title='Postcode' id='postcode' value={order.postcode} onChange={fillOrderDetails} />

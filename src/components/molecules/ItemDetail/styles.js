@@ -7,6 +7,10 @@ export const styles = (theme) => ({
     textAlign: 'center',
     color: colors.primary.dark,
   },
+  itemImage: {
+    minWidth: '15rem',
+    width: '10rem'
+  },
   textContainer: {
     margin: '2rem 0 4rem 0',
   },

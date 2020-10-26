@@ -11,7 +11,16 @@ export const styles = (theme) => {
       textAlign: 'justify',
       margin: 'auto',
       fontSize: '1.2rem'
+    },
+    socialContainer: {
+      textAlign: 'center',
+    },
+    socialIcon: {
+      width: '2rem',
+      margin: '1rem',
+      '&:hover': {
+        opacity: '0.8'
+      }
     }
-
   });
 };

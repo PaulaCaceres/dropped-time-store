@@ -16,6 +16,8 @@ const ItemDetailRaw = (props) => {
 
     return (
         <Paper className={classes.container}>
+            <img src={item.image} className={classes.itemImage} alt="product-detail" />
+
             <div className={classes.textContainer}>
                 <Typography className={classes.title}>
                     {item.title}

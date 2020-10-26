@@ -1,6 +1,6 @@
 export const styles = (theme) => ({
   mainContainer: {
-    width: '20rem',
+    width: '50%',
     height: '25rem',
     margin: '2rem',
   },

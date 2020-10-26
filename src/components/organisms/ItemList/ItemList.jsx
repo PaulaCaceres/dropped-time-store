@@ -19,7 +19,7 @@ const ItemListRaw = (props) => {
               <Item
                 title={item.title}
                 description={item.description}
-                img={item}
+                img={item.image}
               />
             </NavLink>
           )

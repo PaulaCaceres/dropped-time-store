@@ -19,8 +19,8 @@ export const styles = (theme) => ({
   navbarItem: {
     display: 'flex',
     flexDirection: 'row',
-    textTransform: 'uppercase',
     textDecoration: 'none',
+    textTransform: 'capitalize',
     alignItems: 'center',
     color: colors.secondary.main,
     "&:hover": {

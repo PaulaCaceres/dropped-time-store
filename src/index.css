@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "BasierCircle", "Segoe UI",
+  font-family: -apple-system, BlinkMacSystemFont, "Candelion", "BasierCircle", "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
     "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -13,11 +13,46 @@ code {
 }
 
 @font-face {
-  font-family: "BasierCircle";
+  font-family: "Candelion";
   font-style: normal;
-  font-weight: normal;
-  src: local("BasierCircle"),
-    url(./assets/fonts/Basier-Circle-Regular.otf) format("opentype");
+  font-weight: 500;
+  src: local("Candelion"),
+    url(./assets/fonts/Candelion-regular.otf) format("opentype");
+}
+@font-face {
+  font-family: "Candelion";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Candelion"),
+    url(./assets/fonts/Candelion-regular2.otf) format("opentype");
+}
+@font-face {
+  font-family: "Candelion";
+  font-style: bold;
+  font-weight: 600;
+  src: local("Candelion"),
+    url(./assets/fonts/Candelion-bold.otf) format("opentype");
+}
+@font-face {
+  font-family: "Candelion";
+  font-style: bold;
+  font-weight: 600;
+  src: local("Candelion"),
+    url(./assets/fonts/Candelion-bold2.otf) format("opentype");
+}
+@font-face {
+  font-family: "Candelion";
+  font-style: bold;
+  font-weight: 700;
+  src: local("Candelion"),
+    url(./assets/fonts/Candelion-rough.otf) format("opentype");
+}
+@font-face {
+  font-family: "Candelion";
+  font-style: bold;
+  font-weight: 700;
+  src: local("Candelion"),
+    url(./assets/fonts/Candelion-rough2.otf) format("opentype");
 }
 
 @font-face {

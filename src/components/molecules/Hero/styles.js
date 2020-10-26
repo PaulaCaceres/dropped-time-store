@@ -20,7 +20,6 @@ export const styles = (theme) => ({
   heroDescription: {
     fontSize: '1.2rem',
     margin: '1rem 0 2rem 0',
-
   },
   heroButton: {
     padding: '1rem 2rem',

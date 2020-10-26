@@ -15,11 +15,7 @@ const ItemRaw = (props) => {
   return (
     <Card className={classes.mainContainer}>
       <CardActionArea className={classes.actionContainer}>
-        <CardMedia
-          className={classes.itemImage}
-          image={img}
-          title="Swimming products"
-        />
+        <img src={img} className={classes.itemImage} alt="button-icon" />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             {title}

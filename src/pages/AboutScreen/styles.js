@@ -3,14 +3,17 @@ import { createStyles } from "@material-ui/core/styles";
 export const styles = (theme) => {
   return createStyles({
     mainContainer: {
-      height: '100vh',
+      margin: '8rem auto',
+      textAlign: 'center'
     },
     text: {
       width: '50%',
-      padding: '6rem',
-      textAlign: 'justify',
-      margin: 'auto',
-      fontSize: '2rem'
+      textAlign: 'center',
+      margin: '2rem auto',
+      fontSize: '1rem'
+    },
+    logoIcon: {
+      width: '6rem'
     }
 
   });
