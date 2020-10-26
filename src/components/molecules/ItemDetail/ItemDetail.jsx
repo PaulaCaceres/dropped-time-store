@@ -10,7 +10,7 @@ const ItemDetailRaw = (props) => {
     const { cart, setCart } = useContext(CartContext);
 
     const addToCart = () => {
-        const toBuy = { id: item.id, amount: count };
+        const toBuy = { id: item.id, price: item.price, amount: count };
         setCart([...cart, toBuy])
     }
 

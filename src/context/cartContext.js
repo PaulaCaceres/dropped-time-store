@@ -17,12 +17,14 @@ export const CartProvider = (props) => {
   }
 
   const calculateOrderPrice = () => {
-    let currentProducts = 0;
+    let currentPrice = 0;
     cart.map(product => {
-      currentProducts += product.price;
+      console.log('product.price', product);
+      currentPrice += product.price * product.amount;
     })
-    const totalOrderPrice = currentProducts;
-    return totalOrderPrice
+    const totalOrderPrice = currentPrice;
+    return totalOrderPrice;
+
   }
 
   return (

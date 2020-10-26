@@ -11,6 +11,7 @@ class ActionButtonRaw extends Component {
       textStyle,
       img,
       onClick = () => { },
+      disabled
     } = this.props;
 
     return (
@@ -19,6 +20,7 @@ class ActionButtonRaw extends Component {
         color="primary"
         className={`${buttonStyle} ${classes.button}`}
         onClick={() => onClick()}
+        disabled={disabled}
       >
         {img ? (
           <img src={img} className={classes.buttonIcon} alt="button-icon" />

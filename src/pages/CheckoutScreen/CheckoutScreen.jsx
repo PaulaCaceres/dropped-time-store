@@ -4,6 +4,8 @@ import { CartContext } from '../../context/cartContext'
 import { withStyles, Typography, Breadcrumbs, Paper } from "@material-ui/core";
 import { ActionButton, Form } from '../../components'
 import { styles } from "./styles";
+import { getFirestore } from '../../firebase';
+import * as firebase from 'firebase/app';
 
 const CheckoutScreenRaw = (props) => {
   const { classes } = props;
@@ -26,8 +28,26 @@ const CheckoutScreenRaw = (props) => {
     setOrder({ ...order, [id]: value })
   }
 
+  const checkRequiredInfo = () => {
+    let isCompleted = false;
+    Object.values(order).map(item => {
+      if (item === "") {
+        isCompleted = true
+      }
+      else isCompleted = false
+    })
+    return isCompleted
+  }
+
   const goToConfirmedOrder = () => {
-    history.push('/confirmed-order')
+    const db = getFirestore();
+    const orders = db.collection("orders")
+    const newOrder = { ...order, date: firebase.firestore.Timestamp.fromDate(new Date()) };
+
+    orders.add(newOrder)
+      .then(({ id }) => console.log(id))
+      .catch((err) => console.log(err))
+      .finally(() => history.push('/confirmed-order'))
   }
 
   return (
@@ -69,7 +89,7 @@ const CheckoutScreenRaw = (props) => {
         {Object.values(order).map(item =>
           <Typography>{item}</Typography>
         )}
-        <ActionButton title='Confirm order' onClick={goToConfirmedOrder} />
+        <ActionButton title='Confirm order' onClick={goToConfirmedOrder} disabled={checkRequiredInfo()} />
       </Paper>
     </div>
   );

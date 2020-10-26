@@ -9,8 +9,7 @@ import Shopping from "../../../assets/icons/shopping.png";
 const CartRaw = (props) => {
   const { classes, button } = props;
   const history = useHistory();
-  const { calculateProductsAmount } = useContext(CartContext);
-  const { calculateOrderPrice } = useContext(CartContext);
+  const { calculateProductsAmount, calculateOrderPrice } = useContext(CartContext);
 
   const productsAmount = calculateProductsAmount()
   const orderPrice = calculateOrderPrice()
@@ -28,7 +27,7 @@ const CartRaw = (props) => {
         <Typography className={classes.text}>Subtotal: </Typography>
         <Typography className={classes.text}>Total items: {productsAmount}</Typography>
         <Typography className={classes.text}>Shipping: FREE</Typography>
-        {/*  <Typography className={classes.text}>Order total: {orderPrice}</Typography> */}
+        <Typography className={classes.text}>Order total: {orderPrice}</Typography>
 
       </div>
       {button &&
@@ -37,6 +36,7 @@ const CartRaw = (props) => {
             title={`Proceed to checkout`}
             onClick={goToCheckout}
             buttonStyle={classes.checkoutButton}
+            disabled={productsAmount === 0}
           />
         </div>
       }
