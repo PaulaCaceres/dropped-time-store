@@ -9,12 +9,8 @@ export const styles = (theme) => ({
     justifyContent: "space-around"
   },
   logoStyle: {
-    width: "130px",
+    width: "100px",
     padding: "0.2rem",
-  },
-  logoTitle: {
-    color: "white",
-    backgroundColor: "white",
   },
   navbarItem: {
     display: 'flex',
@@ -22,9 +18,9 @@ export const styles = (theme) => ({
     textDecoration: 'none',
     textTransform: 'capitalize',
     alignItems: 'center',
-    color: colors.secondary.main,
+    color: colors.text.secondary,
     "&:hover": {
-      color: colors.secondary.dark,
+      color: colors.primary.main,
     },
   },
   cartIcon: {

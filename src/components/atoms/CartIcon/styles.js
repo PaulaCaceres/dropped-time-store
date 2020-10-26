@@ -2,10 +2,10 @@ import { colors } from '../../../styles/colors';
 
 export const styles = (theme) => ({
   cartIcon: {
-    width: '3rem',
-    color: colors.secondary.main,
+    width: '1.4rem',
+    color: colors.primary.light,
     "&:hover": {
-      color: colors.secondary.dark,
+      color: colors.primary.main,
     },
   }
 });

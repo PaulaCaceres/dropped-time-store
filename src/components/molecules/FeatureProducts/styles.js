@@ -28,6 +28,8 @@ export const styles = (theme) => ({
   title: {
     fontSize: '2.5rem',
     fontWeight: '700',
+    color: colors.primary.dark,
+
   },
   subtitle: {
     fontSize: '1.2rem',

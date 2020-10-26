@@ -14,7 +14,7 @@ export const styles = (theme) => ({
   },
   heroTitle: {
     fontSize: '4rem',
-    color: colors.primary.light,
+    color: colors.secondary.light,
     lineHeight: '4.2rem',
   },
   heroDescription: {

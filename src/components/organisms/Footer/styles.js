@@ -4,7 +4,7 @@ export const styles = (theme) => ({
   mainContainer: {
     height: '8rem',
     display: 'flex',
-    backgroundColor: 'black',
+    backgroundColor: colors.background.secondary,
     justifyContent: 'space-around'
   },
   text: {

@@ -7,7 +7,8 @@ export const styles = (theme) => ({
     borderRadius: '15px',
     backgroundColor: colors.primary.light,
     '&:hover': {
-      backgroundColor: colors.primary.dark,
+      backgroundColor: colors.primary.main,
+
       color: colors.text.secondary
     }
   }
