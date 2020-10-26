@@ -1,7 +1,3 @@
-import { createStyles } from "@material-ui/core/styles";
-
-export const styles = (theme) => {
-  return createStyles({
-    mainContainer: {},
-  });
-};
+export const styles = (theme) => ({
+  mainContainer: {},
+});

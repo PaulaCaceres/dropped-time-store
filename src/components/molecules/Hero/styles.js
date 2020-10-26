@@ -3,7 +3,7 @@ import HeroImage from '../../../assets/images/test.jpg'
 
 export const styles = (theme) => ({
   mainContainer: {
-    height: 'calc(100vh - 50px)',
+    height: '65vh',
     backgroundImage: `url(${HeroImage})`
   },
   textContainer: {
@@ -14,7 +14,7 @@ export const styles = (theme) => ({
   },
   heroTitle: {
     fontSize: '4rem',
-    color: colors.text.secondary,
+    color: colors.primary.light,
     lineHeight: '4.2rem',
   },
   heroDescription: {

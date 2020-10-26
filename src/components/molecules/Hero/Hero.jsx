@@ -18,6 +18,7 @@ const HeroRaw = (props) => {
       justify="space-around"
       className={classes.mainContainer}
     >
+
       <Grid item xs={12} sm={4} className={classes.textContainer}>
         <Typography className={classes.heroTitle}>Time to give your best</Typography>
         <Typography className={classes.heroDescription}>Style and Swimming Performance</Typography>

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { getFirestore } from '../../firebase';
 import { withStyles } from "@material-ui/core";
+import { Hero, FeatureProducts, Footer } from "../../components";
 import { styles } from "./styles";
-import { Hero } from "../../components";
+import Product1 from '../../assets/images/feature_product1.jpg';
+import Product2 from '../../assets/images/feature_product2.jpg';
 
 const HomeRaw = () => {
   const [items, setItems] = useState([]);
@@ -28,6 +30,8 @@ const HomeRaw = () => {
   return (
     <div className={styles.mainContainer}>
       <Hero />
+      <FeatureProducts firstTitle='Arena Elite Hand Paddle' secondTitle="Speedo Swim Cup" firstImage={Product1} secondImage={Product2} />
+      <Footer />
     </div>
   );
 }
