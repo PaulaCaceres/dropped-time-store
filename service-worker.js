@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/dropped-time-store/precache-manifest.94ff46a9666c45802d0fe750de0e7bbd.js"
+  "/dropped-time-store/precache-manifest.6bb1cceeb9f9108c2c694ca9e2c0ea5d.js"
 );
 
 self.addEventListener('message', (event) => {

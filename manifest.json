@@ -18,7 +18,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "dropped-time-store/",
+  "start_url": "./dropped-time-store/",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
