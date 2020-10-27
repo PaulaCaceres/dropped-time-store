@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/dropped-time-store/static/css/main.b79335f5.chunk.css",
+    "main.js": "/dropped-time-store/static/js/main.f069435b.chunk.js",
+    "main.js.map": "/dropped-time-store/static/js/main.f069435b.chunk.js.map",
+    "runtime-main.js": "/dropped-time-store/static/js/runtime-main.869a1d87.js",
+    "runtime-main.js.map": "/dropped-time-store/static/js/runtime-main.869a1d87.js.map",
+    "static/js/2.4beba1d1.chunk.js": "/dropped-time-store/static/js/2.4beba1d1.chunk.js",
+    "static/js/2.4beba1d1.chunk.js.map": "/dropped-time-store/static/js/2.4beba1d1.chunk.js.map",
+    "index.html": "/dropped-time-store/index.html",
+    "precache-manifest.94ff46a9666c45802d0fe750de0e7bbd.js": "/dropped-time-store/precache-manifest.94ff46a9666c45802d0fe750de0e7bbd.js",
+    "service-worker.js": "/dropped-time-store/service-worker.js",
+    "static/css/main.b79335f5.chunk.css.map": "/dropped-time-store/static/css/main.b79335f5.chunk.css.map",
+    "static/js/2.4beba1d1.chunk.js.LICENSE.txt": "/dropped-time-store/static/js/2.4beba1d1.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/dropped-time-store/static/media/Candelion-rough2.808e557f.otf",
+    "static/media/favicon-dropped.svg": "/dropped-time-store/static/media/favicon-dropped.9564480a.svg",
+    "static/media/feature_product1.jpg": "/dropped-time-store/static/media/feature_product1.c96fe19d.jpg",
+    "static/media/feature_product2.jpg": "/dropped-time-store/static/media/feature_product2.8b4d8685.jpg",
+    "static/media/icon-facebook.svg": "/dropped-time-store/static/media/icon-facebook.8dc6a84e.svg",
+    "static/media/icon-instagram.svg": "/dropped-time-store/static/media/icon-instagram.e1512045.svg",
+    "static/media/icon-linkedin.svg": "/dropped-time-store/static/media/icon-linkedin.85e271b3.svg",
+    "static/media/icon-twitter.svg": "/dropped-time-store/static/media/icon-twitter.47a26b26.svg",
+    "static/media/logo-dropped.svg": "/dropped-time-store/static/media/logo-dropped.ee83316a.svg",
+    "static/media/shopping.png": "/dropped-time-store/static/media/shopping.e212323c.png",
+    "static/media/test.jpg": "/dropped-time-store/static/media/test.027372bf.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.869a1d87.js",
+    "static/js/2.4beba1d1.chunk.js",
+    "static/css/main.b79335f5.chunk.css",
+    "static/js/main.f069435b.chunk.js"
+  ]
+}
